@@ -30,6 +30,15 @@
             <div class="card">
               <div class="card-header">
                 <a href="/script" class="btn btn-primary"><i class="fas fa-plus"></i> Get Data Sensor</a>
+                &nbsp;
+                <select class="form-control col-2">
+                    <option>Sensor 1</option>
+                    <option>Sensor 2</option>
+                    <option>Sensor 3</option>
+                    <option>Sensor 4</option>
+                    <option>Sensor 5</option>
+                    <option>Sensor 6</option>
+                </select>
                 {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-item"><i class="fas fa-plus"></i> Add Item</button> --}}
               </div>
               <div class="card-body">
