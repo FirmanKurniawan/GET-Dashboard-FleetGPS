@@ -47,22 +47,24 @@
                     <thead>
                       <tr>
                         <th class="text-center">
-                          #
+                          Name Sensor
                         </th>
                         <th>Temperature</th>
                         <th>Humidity</th>
                         <th>Heat Index</th>
+                        <th>Time</th>
                       </tr>
                     </thead>
                     <tbody>
                       @foreach($datas as $data)
                       <tr>
                         <td>
-                            {{ $loop->iteration }}
+                            Sensor 1
                         </td>
                         <td>{{ $data->temperature }}</td>
                         <td>{{ $data->humidity }}</td>
                         <td>{{ $data->heat_index }}</td>
+                        <td>{{ $data->time }}</td>
                       </tr>
                       @endforeach
                     </tbody>
