@@ -52,7 +52,11 @@
                         color: '#fbfbfb',
                         lineWidth: 2
                     }
-                }]
+                }],
+            },
+            chartArea: {
+                borderColor: '#000000', // Set the border color to black
+                borderWidth: 1
             }
         }
     });
