@@ -30,15 +30,15 @@
         },
         options: {
             legend: {
-                display: true, // Menampilkan legenda
-                labels: {
-                    boxWidth: 20 // Ukuran kotak legenda
-                }
+                display: false, // Menampilkan legenda
+                // labels: {
+                //     boxWidth: 20 // Ukuran kotak legenda
+                // }
             },
             scales: {
                 yAxes: [{
                     gridLines: {
-                        display: false,
+                        // display: false,
                         drawBorder: false,
                         color: '#f2f2f2'
                     },
@@ -51,9 +51,13 @@
                 }],
                 xAxes: [{
                     gridLines: {
-                        color: '#fbfbfb',
-                        lineWidth: 2
-                    }
+                        // color: '#fbfbfb',
+                        // lineWidth: 2,
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
                 }],
             },
             chartArea: {
