@@ -32,11 +32,11 @@
     var myChart1 = new Chart(statistics_chart, {
         type: 'line',
         data: {
-            labels: timeLabels,
+            // labels: timeLabels,
             datasets: [
                 {
                     label: 'Temperature',
-                    data: temperature,
+                    // data: temperature,
                     borderWidth: 2.5,
                     borderColor: '#6777ef',
                     backgroundColor: '#6777ef',
