@@ -318,20 +318,20 @@
     }
 
     var statistics_chart_heat_index = document.getElementById("myChartWarehouse3").getContext('2d');
-    var heatIndex = {!! json_encode($heat_index) !!};
-    var timeLabelsHeatIndex = {!! json_encode($timeLabels) !!};
+    var heat_index = {!! json_encode($heat_index) !!};
+    var timeLabels = {!! json_encode($timeLabels) !!};
 
     var myChartHeatIndex = new Chart(statistics_chart_heat_index, {
         type: 'line',
         data: {
-            labels: timeLabelsHeatIndex,
+            labels: timeLabels,
             datasets: [
                 {
                     label: 'Heat Index',
                     data: heat_index,
                     borderWidth: 2.5,
-                    borderColor: '#3cb371',
-                    backgroundColor: '#3cb371',
+                    borderColor: '#ef6e77',
+                    backgroundColor: '#ef6e77',
                     pointBackgroundColor: '#ffffff',
                     pointBorderColor: '#000000',
                     pointRadius: 4
