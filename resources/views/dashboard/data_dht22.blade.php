@@ -98,8 +98,8 @@
                     },
                     ticks: {
                         stepSize: 10,
-                        min: 20,
-                        max: 70
+                        min: 30,
+                        max: 100
                     }
                 }],
                 xAxes: [{
