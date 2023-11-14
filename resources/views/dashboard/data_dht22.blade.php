@@ -39,12 +39,14 @@
                 yAxes: [{
                     gridLines: {
                         display: false,
-                        drawBorder: false
+                        drawBorder: false,
+                        color: '#f2f2f2'
                     },
                     ticks: {
                         stepSize: 10,
                         min: 20,
-                        max: 50
+                        max: 50,
+                        beginAtZero: true
                     }
                 }],
                 xAxes: [{
