@@ -14,12 +14,10 @@
             method: 'GET',
             dataType: 'json',
             success: function(response) {
-                console.log(response)
-                myChart.data.labels = response.timeLabels;
-                console.log(myChart.data.labels)
-                myChart.data.datasets[0].data = response.temperature;
+                myChart1.data.labels = response.timeLabels;
+                myChart1.data.datasets[0].data = response.temperature;
 
-                myChart.update();
+                myChart1.update();
             },
             error: function(error) {
                 console.error('Error fetching data:', error);
@@ -31,7 +29,7 @@
     var temperature = {!! json_encode($temperature) !!};
     var timeLabels = {!! json_encode($timeLabels) !!};
 
-    var myChart = new Chart(statistics_chart, {
+    var myChart1 = new Chart(statistics_chart, {
         type: 'line',
         data: {
             labels: timeLabels,
