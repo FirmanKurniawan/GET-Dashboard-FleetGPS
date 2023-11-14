@@ -15,3 +15,8 @@ Route::get('/data-mq2', [DashboardController::class, 'mq2']);
 Route::get('/data-mq135', [DashboardController::class, 'mq135']);
 
 Route::get('/script', [PythonController::class, 'runScript']);
+
+Route::get('/temperature', [DashboardController::class, 'temperature']);
+Route::get('/humidity', [DashboardController::class, 'humidity']);
+Route::get('/heat_index', [DashboardController::class, 'heat_index']);
+Route::get('/time', [DashboardController::class, 'time']);

@@ -31,6 +31,30 @@ class DashboardController extends Controller
         return view('dashboard.data_dht22', compact('datas', 'temperature', 'humidity', 'heat_index', 'timeLabels'));
     }
 
+    public function temperature()
+    {
+        $temperature = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('temperature');
+        return view('dashboard.data_temperature', compact('temperature'));
+    }
+
+    public function humidity()
+    {
+        $humidity = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('humidity');
+        return view('dashboard.data_humidity', compact('humidity'));
+    }
+
+    public function heat_index()
+    {
+        $heat_index = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('heat_index');
+        return view('dashboard.data_heat_index', compact('heat_index'));
+    }
+
+    public function time()
+    {
+        $timeLabels = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('time');
+        return view('dashboard.data_time', compact('timeLabels'));
+    }
+
     public function mq2()
     {
         $datas = mq2Sensor::orderBy('time', 'DESC')->get();

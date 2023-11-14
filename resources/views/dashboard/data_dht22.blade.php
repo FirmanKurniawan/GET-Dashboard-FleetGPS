@@ -8,6 +8,77 @@
 <script src="{{asset('stisla/dist/assets/modules/chart.min.js')}}"></script>
 
 <script>
+    function updateChartData() {
+        $.ajax({
+            url: 'http://localhost:8000/temperature',
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                myChart.data.labels = response.timeLabels;
+                myChart.data.datasets[0].data = response.temperature;
+
+                myChart.update();
+            },
+            error: function(error) {
+                console.error('Error fetching data:', error);
+            }
+        });
+    }
+
+    var statistics_chart = document.getElementById("myChartWarehouse").getContext('2d');
+    var temperature = {!! json_encode($temperature) !!};
+    var timeLabels = {!! json_encode($timeLabels) !!};
+
+    var myChart = new Chart(statistics_chart, {
+        type: 'line',
+        data: {
+            labels: timeLabels,
+            datasets: [
+                {
+                    label: 'Temperature',
+                    data: temperature,
+                    borderWidth: 2.5,
+                    borderColor: '#6777ef',
+                    backgroundColor: '#6777ef',
+                    pointBackgroundColor: '#ffffff',
+                    pointBorderColor: '#000000',
+                    pointRadius: 4
+                },
+            ]
+        },
+        options: {
+            legend: {
+                display: false,
+            },
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        drawBorder: false,
+                        color: '#f2f2f2'
+                    },
+                    ticks: {
+                        stepSize: 5,
+                        min: 20,
+                        max: 40,
+                        beginAtZero: true
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                }],
+            }
+        }
+    });
+    setInterval(updateChartData, 1000);
+</script>
+
+
+{{-- <script>
     var statistics_chart = document.getElementById("myChartWarehouse").getContext('2d');
     var temperature = {!! json_encode($temperature) !!};
     var timeLabels = {!! json_encode($timeLabels) !!};
@@ -30,15 +101,11 @@
         },
         options: {
             legend: {
-                display: false, // Menampilkan legenda
-                // labels: {
-                //     boxWidth: 20 // Ukuran kotak legenda
-                // }
+                display: false,
             },
             scales: {
                 yAxes: [{
                     gridLines: {
-                        // display: false,
                         drawBorder: false,
                         color: '#f2f2f2'
                     },
@@ -51,8 +118,6 @@
                 }],
                 xAxes: [{
                     gridLines: {
-                        // color: '#fbfbfb',
-                        // lineWidth: 2,
                         display: false
                     },
                     ticks: {
@@ -62,7 +127,7 @@
             }
         }
     });
-</script>
+</script> --}}
 
 <script>
     var statistics_chart = document.getElementById("myChartWarehouse2").getContext('2d');
@@ -87,15 +152,11 @@
         },
         options: {
             legend: {
-                display: false, // Menampilkan legenda
-                // labels: {
-                //     boxWidth: 20 // Ukuran kotak legenda
-                // }
+                display: false,
             },
             scales: {
                 yAxes: [{
                     gridLines: {
-                        // display: false,
                         drawBorder: false,
                         color: '#f2f2f2'
                     },
@@ -108,8 +169,6 @@
                 }],
                 xAxes: [{
                     gridLines: {
-                        // color: '#fbfbfb',
-                        // lineWidth: 2,
                         display: false
                     },
                     ticks: {
@@ -144,15 +203,11 @@
         },
         options: {
             legend: {
-                display: false, // Menampilkan legenda
-                // labels: {
-                //     boxWidth: 20 // Ukuran kotak legenda
-                // }
+                display: false,
             },
             scales: {
                 yAxes: [{
                     gridLines: {
-                        // display: false,
                         drawBorder: false,
                         color: '#f2f2f2'
                     },
@@ -165,8 +220,6 @@
                 }],
                 xAxes: [{
                     gridLines: {
-                        // color: '#fbfbfb',
-                        // lineWidth: 2,
                         display: false
                     },
                     ticks: {
