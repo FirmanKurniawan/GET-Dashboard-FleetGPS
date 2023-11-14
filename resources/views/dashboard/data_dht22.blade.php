@@ -282,48 +282,11 @@
                 <div class="card-header-action">
                     <div class="btn-group">
                     <a href="#" class="btn" id="weekBtn">Interval 5 detik</a>
-                    {{-- <a href="#" class="btn" id="monthBtn">Month</a> --}}
                     </div>
                 </div>
                 </div>
                 <div class="card-body">
-                <canvas id="myChartWarehouse3" height="182"></canvas>
-                {{-- <canvas id="myChartWarehouse2" height="182" style="display: none;"></canvas> --}}
-                <script>
-                    const weekBtn = document.getElementById("weekBtn");
-                    const monthBtn = document.getElementById("monthBtn");
-                    const myChartWarehouse = document.getElementById("myChartWarehouse");
-                    const myChartWarehouse = document.getElementById("myChartWarehouse2");
-                    const myChartWarehouse = document.getElementById("myChartWarehouse3");
-                    //const myChartWarehouse2 = document.getElementById("myChartWarehouse2");
-
-                    // Inisialisasi tombol "Week" sebagai aktif
-                    weekBtn.classList.add("active");
-
-                    // Tangani klik pada tombol Week
-                    weekBtn.addEventListener("click", function(event) {
-                        event.preventDefault(); // Mencegah perubahan posisi secara otomatis
-
-                        myChartWarehouse.style.display = "block";
-                        myChartWarehouse2.style.display = "none";
-
-                        // Atur status tombol aktif
-                        weekBtn.classList.add("active");
-                        monthBtn.classList.remove("active");
-                    });
-
-                    // Tangani klik pada tombol Month
-                    monthBtn.addEventListener("click", function(event) {
-                        event.preventDefault(); // Mencegah perubahan posisi secara otomatis
-
-                        myChartWarehouse.style.display = "none";
-                        myChartWarehouse2.style.display = "block";
-
-                        // Atur status tombol aktif
-                        weekBtn.classList.remove("active");
-                        monthBtn.classList.add("active");
-                    });
-                </script>
+                <canvas id="myChartWarehouse" height="182"></canvas>
                 </div>
             </div>
             </div>
@@ -337,48 +300,11 @@
                 <div class="card-header-action">
                     <div class="btn-group">
                     <a href="#" class="btn" id="weekBtn">Interval 5 detik</a>
-                    {{-- <a href="#" class="btn" id="monthBtn">Month</a> --}}
                     </div>
                 </div>
                 </div>
                 <div class="card-body">
                 <canvas id="myChartWarehouse2" height="182"></canvas>
-                {{-- <canvas id="myChartWarehouse2" height="182" style="display: none;"></canvas> --}}
-                <script>
-                    const weekBtn = document.getElementById("weekBtn");
-                    const monthBtn = document.getElementById("monthBtn");
-                    const myChartWarehouse = document.getElementById("myChartWarehouse");
-                    const myChartWarehouse = document.getElementById("myChartWarehouse2");
-                    const myChartWarehouse = document.getElementById("myChartWarehouse3");
-                    //const myChartWarehouse2 = document.getElementById("myChartWarehouse2");
-
-                    // Inisialisasi tombol "Week" sebagai aktif
-                    weekBtn.classList.add("active");
-
-                    // Tangani klik pada tombol Week
-                    weekBtn.addEventListener("click", function(event) {
-                        event.preventDefault(); // Mencegah perubahan posisi secara otomatis
-
-                        myChartWarehouse.style.display = "block";
-                        myChartWarehouse2.style.display = "none";
-
-                        // Atur status tombol aktif
-                        weekBtn.classList.add("active");
-                        monthBtn.classList.remove("active");
-                    });
-
-                    // Tangani klik pada tombol Month
-                    monthBtn.addEventListener("click", function(event) {
-                        event.preventDefault(); // Mencegah perubahan posisi secara otomatis
-
-                        myChartWarehouse.style.display = "none";
-                        myChartWarehouse2.style.display = "block";
-
-                        // Atur status tombol aktif
-                        weekBtn.classList.remove("active");
-                        monthBtn.classList.add("active");
-                    });
-                </script>
                 </div>
             </div>
             </div>
@@ -392,48 +318,11 @@
                 <div class="card-header-action">
                     <div class="btn-group">
                     <a href="#" class="btn" id="weekBtn">Interval 5 detik</a>
-                    {{-- <a href="#" class="btn" id="monthBtn">Month</a> --}}
                     </div>
                 </div>
                 </div>
                 <div class="card-body">
                 <canvas id="myChartWarehouse3" height="182"></canvas>
-                {{-- <canvas id="myChartWarehouse2" height="182" style="display: none;"></canvas> --}}
-                <script>
-                    const weekBtn = document.getElementById("weekBtn");
-                    const monthBtn = document.getElementById("monthBtn");
-                    const myChartWarehouse = document.getElementById("myChartWarehouse");
-                    const myChartWarehouse = document.getElementById("myChartWarehouse2");
-                    const myChartWarehouse = document.getElementById("myChartWarehouse3");
-                    //const myChartWarehouse2 = document.getElementById("myChartWarehouse2");
-
-                    // Inisialisasi tombol "Week" sebagai aktif
-                    weekBtn.classList.add("active");
-
-                    // Tangani klik pada tombol Week
-                    weekBtn.addEventListener("click", function(event) {
-                        event.preventDefault(); // Mencegah perubahan posisi secara otomatis
-
-                        myChartWarehouse.style.display = "block";
-                        myChartWarehouse2.style.display = "none";
-
-                        // Atur status tombol aktif
-                        weekBtn.classList.add("active");
-                        monthBtn.classList.remove("active");
-                    });
-
-                    // Tangani klik pada tombol Month
-                    monthBtn.addEventListener("click", function(event) {
-                        event.preventDefault(); // Mencegah perubahan posisi secara otomatis
-
-                        myChartWarehouse.style.display = "none";
-                        myChartWarehouse2.style.display = "block";
-
-                        // Atur status tombol aktif
-                        weekBtn.classList.remove("active");
-                        monthBtn.classList.add("active");
-                    });
-                </script>
                 </div>
             </div>
             </div>
