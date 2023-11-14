@@ -308,7 +308,7 @@
             dataType: 'json',
             success: function(response) {
                 myChartHeatIndex.data.labels = response.timeLabels;
-                myChartHeatIndex.data.datasets[0].data = response.heatIndex;
+                myChartHeatIndex.data.datasets[0].data = response.heat_index;
                 myChartHeatIndex.update();
             },
             error: function(error) {
@@ -328,7 +328,7 @@
             datasets: [
                 {
                     label: 'Heat Index',
-                    data: heatIndex,
+                    data: heat_index,
                     borderWidth: 2.5,
                     borderColor: '#3cb371',
                     backgroundColor: '#3cb371',
