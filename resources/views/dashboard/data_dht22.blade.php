@@ -59,10 +59,6 @@
                         display: false
                     },
                 }],
-            },
-            chartArea: {
-                borderColor: '#000000', // Set the border color to black
-                borderWidth: 1
             }
         }
     });
