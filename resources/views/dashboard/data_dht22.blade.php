@@ -20,10 +20,10 @@
                     label: 'Temperature',
                     data: temperature,
                     borderWidth: 5,
-                    borderColor: '#6777ef',
+                    borderColor: '#000000',
                     backgroundColor: 'transparent',
                     pointBackgroundColor: '#fff',
-                    pointBorderColor: '#6777ef',
+                    pointBorderColor: '#000000',
                     pointRadius: 4
                 },
             ]
@@ -44,7 +44,7 @@
                     ticks: {
                         stepSize: 10,
                         min: 20,
-                        max: 100
+                        max: 50
                     }
                 }],
                 xAxes: [{
@@ -94,8 +94,8 @@
                     },
                     ticks: {
                         stepSize: 10,
-                        min: 20,
-                        max: 100
+                        min: 30,
+                        max: 70
                     }
                 }],
                 xAxes: [{
@@ -146,7 +146,7 @@
                     ticks: {
                         stepSize: 10,
                         min: 20,
-                        max: 100
+                        max: 50
                     }
                 }],
                 xAxes: [{
