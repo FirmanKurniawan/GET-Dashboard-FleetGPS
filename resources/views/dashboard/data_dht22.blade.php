@@ -43,7 +43,7 @@
                         color: '#f2f2f2'
                     },
                     ticks: {
-                        stepSize: 10,
+                        stepSize: 5,
                         min: 20,
                         max: 50,
                         beginAtZero: true
