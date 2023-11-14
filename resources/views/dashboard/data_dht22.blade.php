@@ -278,7 +278,7 @@
             <div class="col-lg-12 col-md-12 col-12 col-sm-12">
             <div class="card">
                 <div class="card-header">
-                <h4>Statistics</h4>
+                <h4>Statistics Temperature</h4>
                 <div class="card-header-action">
                     <div class="btn-group">
                     <a href="#" class="btn" id="weekBtn">Interval 5 detik</a>
@@ -286,7 +286,7 @@
                 </div>
                 </div>
                 <div class="card-body">
-                <canvas id="myChartWarehouse" height="182"></canvas>
+                <canvas id="myChartWarehouse" height="100"></canvas>
                 </div>
             </div>
             </div>
@@ -296,7 +296,7 @@
             <div class="col-lg-12 col-md-12 col-12 col-sm-12">
             <div class="card">
                 <div class="card-header">
-                <h4>Statistics</h4>
+                <h4>Statistics Humidity</h4>
                 <div class="card-header-action">
                     <div class="btn-group">
                     <a href="#" class="btn" id="weekBtn">Interval 5 detik</a>
@@ -304,7 +304,7 @@
                 </div>
                 </div>
                 <div class="card-body">
-                <canvas id="myChartWarehouse2" height="182"></canvas>
+                <canvas id="myChartWarehouse2" height="100"></canvas>
                 </div>
             </div>
             </div>
@@ -314,7 +314,7 @@
             <div class="col-lg-12 col-md-12 col-12 col-sm-12">
             <div class="card">
                 <div class="card-header">
-                <h4>Statistics</h4>
+                <h4>Statistics Heat Index</h4>
                 <div class="card-header-action">
                     <div class="btn-group">
                     <a href="#" class="btn" id="weekBtn">Interval 5 detik</a>
@@ -322,7 +322,7 @@
                 </div>
                 </div>
                 <div class="card-body">
-                <canvas id="myChartWarehouse3" height="182"></canvas>
+                <canvas id="myChartWarehouse3" height="100"></canvas>
                 </div>
             </div>
             </div>
