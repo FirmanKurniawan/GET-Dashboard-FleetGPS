@@ -130,6 +130,75 @@
 </script> --}}
 
 <script>
+    function updateHumidityChart() {
+        $.ajax({
+            url: 'http://localhost:8000/humidity',
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                myChartHumidity.data.labels = response.timeLabels;
+                myChartHumidity.data.datasets[0].data = response.humidity;
+                myChartHumidity.update();
+            },
+            error: function(error) {
+                console.error('Error fetching humidity data:', error);
+            }
+        });
+    }
+
+    var statistics_chart_humidity = document.getElementById("myChartWarehouse2").getContext('2d');
+    var humidity = {!! json_encode($humidity) !!};
+    var timeLabels = {!! json_encode($timeLabels) !!};
+
+    var myChartHumidity = new Chart(statistics_chart_humidity, {
+        type: 'line',
+        data: {
+            labels: timeLabels,
+            datasets: [
+                {
+                    label: 'Humidity',
+                    data: humidity,
+                    borderWidth: 2.5,
+                    borderColor: '#ef6e77',
+                    backgroundColor: '#ef6e77',
+                    pointBackgroundColor: '#ffffff',
+                    pointBorderColor: '#000000',
+                    pointRadius: 4
+                },
+            ]
+        },
+        options: {
+            legend: {
+                display: false,
+            },
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        drawBorder: false,
+                        color: '#f2f2f2'
+                    },
+                    ticks: {
+                        stepSize: 5,
+                        min: 20,
+                        max: 40,
+                        beginAtZero: true
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                }],
+            }
+        }
+    });
+    setInterval(updateHumidityChart, 1000);
+</script>
+
+{{-- <script>
     var statistics_chart = document.getElementById("myChartWarehouse2").getContext('2d');
     var humidity = {!! json_encode($humidity) !!};
     var timeLabels = {!! json_encode($timeLabels) !!};
@@ -178,9 +247,9 @@
             }
         }
     });
-</script>
+</script> --}}
 
-<script>
+{{-- <script>
     var statistics_chart = document.getElementById("myChartWarehouse3").getContext('2d');
     var heat_index = {!! json_encode($heat_index) !!};
     var timeLabels = {!! json_encode($timeLabels) !!};
@@ -229,7 +298,77 @@
             }
         }
     });
+</script> --}}
+
+<script>
+    function updateHeatIndexChart() {
+        $.ajax({
+            url: 'http://localhost:8000/heat_index',
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                myChartHeatIndex.data.labels = response.timeLabels;
+                myChartHeatIndex.data.datasets[0].data = response.heatIndex;
+                myChartHeatIndex.update();
+            },
+            error: function(error) {
+                console.error('Error fetching heat index data:', error);
+            }
+        });
+    }
+
+    var statistics_chart_heat_index = document.getElementById("myChartWarehouse3").getContext('2d');
+    var heatIndex = {!! json_encode($heat_index) !!};
+    var timeLabelsHeatIndex = {!! json_encode($timeLabels) !!};
+
+    var myChartHeatIndex = new Chart(statistics_chart_heat_index, {
+        type: 'line',
+        data: {
+            labels: timeLabelsHeatIndex,
+            datasets: [
+                {
+                    label: 'Heat Index',
+                    data: heatIndex,
+                    borderWidth: 2.5,
+                    borderColor: '#3cb371',
+                    backgroundColor: '#3cb371',
+                    pointBackgroundColor: '#ffffff',
+                    pointBorderColor: '#000000',
+                    pointRadius: 4
+                },
+            ]
+        },
+        options: {
+            legend: {
+                display: false,
+            },
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        drawBorder: false,
+                        color: '#f2f2f2'
+                    },
+                    ticks: {
+                        stepSize: 5,
+                        min: 20,
+                        max: 40,
+                        beginAtZero: true
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    },
+                }],
+            }
+        }
+    });
+    setInterval(updateHeatIndexChart, 1000);
 </script>
+
 <script src="{{asset('stisla/dist/assets/modules/datatables/datatables.min.js')}}"></script>
 <script src="{{asset('stisla/dist/assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('stisla/dist/assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js')}}"></script>
