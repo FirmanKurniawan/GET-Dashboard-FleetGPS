@@ -10,8 +10,6 @@
 <script>
     var statistics_chart = document.getElementById("myChartWarehouse").getContext('2d');
     var temperature = {!! json_encode($temperature) !!};
-    var humidity = {!! json_encode($humidity) !!};
-    var heat_index = {!! json_encode($heat_index) !!};
     var timeLabels = {!! json_encode($timeLabels) !!};
     var myChart = new Chart(statistics_chart, {
         type: 'line',
@@ -28,19 +26,50 @@
                     pointBorderColor: '#6777ef',
                     pointRadius: 4
                 },
+            ]
+        },
+        options: {
+            legend: {
+                display: true, // Menampilkan legenda
+                labels: {
+                    boxWidth: 20 // Ukuran kotak legenda
+                }
+            },
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        stepSize: 10,
+                        min: 20,
+                        max: 100
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        color: '#fbfbfb',
+                        lineWidth: 2
+                    }
+                }]
+            }
+        }
+    });
+</script>
+
+<script>
+    var statistics_chart = document.getElementById("myChartWarehouse2").getContext('2d');
+    var humidity = {!! json_encode($humidity) !!};
+    var timeLabels = {!! json_encode($timeLabels) !!};
+    var myChart = new Chart(statistics_chart, {
+        type: 'line',
+        data: {
+            labels: timeLabels,
+            datasets: [
                 {
                     label: 'Humidity',
                     data: humidity,
-                    borderWidth: 5,
-                    borderColor: '#ef6e77', // Warna berbeda untuk garis ini
-                    backgroundColor: 'transparent',
-                    pointBackgroundColor: '#fff',
-                    pointBorderColor: '#ef6e77',
-                    pointRadius: 4
-                },
-                {
-                    label: 'Heat Index',
-                    data: heat_index,
                     borderWidth: 5,
                     borderColor: '#ef6e77', // Warna berbeda untuk garis ini
                     backgroundColor: 'transparent',
@@ -64,8 +93,59 @@
                         drawBorder: false
                     },
                     ticks: {
-                        stepSize: 25,
-                        min: 0,
+                        stepSize: 10,
+                        min: 20,
+                        max: 100
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        color: '#fbfbfb',
+                        lineWidth: 2
+                    }
+                }]
+            }
+        }
+    });
+</script>
+
+<script>
+    var statistics_chart = document.getElementById("myChartWarehouse3").getContext('2d');
+    var heat_index = {!! json_encode($heat_index) !!};
+    var timeLabels = {!! json_encode($timeLabels) !!};
+    var myChart = new Chart(statistics_chart, {
+        type: 'line',
+        data: {
+            labels: timeLabels,
+            datasets: [
+                {
+                    label: 'Heat Index',
+                    data: heat_index,
+                    borderWidth: 5,
+                    borderColor: '#3cb371', // Warna berbeda untuk garis ini
+                    backgroundColor: 'transparent',
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#3cb371',
+                    pointRadius: 4
+                },
+            ]
+        },
+        options: {
+            legend: {
+                display: true, // Menampilkan legenda
+                labels: {
+                    boxWidth: 20 // Ukuran kotak legenda
+                }
+            },
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        stepSize: 10,
+                        min: 20,
                         max: 100
                     }
                 }],
@@ -190,6 +270,8 @@
                 </div>
                 <div class="card-body">
                 <canvas id="myChartWarehouse" height="182"></canvas>
+                <canvas id="myChartWarehouse2" height="182"></canvas>
+                <canvas id="myChartWarehouse3" height="182"></canvas>
                 {{-- <canvas id="myChartWarehouse2" height="182" style="display: none;"></canvas> --}}
                 <script>
                     const weekBtn = document.getElementById("weekBtn");
