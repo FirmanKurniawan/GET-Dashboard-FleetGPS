@@ -32,7 +32,7 @@
     var myChart1 = new Chart(statistics_chart, {
         type: 'line',
         data: {
-            labels: timeLabels,
+            labels: [1, 2, 3, 4, 5],
             datasets: [
                 {
                     label: 'Temperature',
