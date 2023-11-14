@@ -24,7 +24,10 @@ class DashboardController extends Controller
     public function dht22()
     {
         $datas = dht22Sensor::orderBy('time', 'DESC')->get();
-        return view('dashboard.data_dht22', compact('datas'));
+        $temperature = dht22Sensor::orderBy('time', 'DESC')->pluck('temperature')->limit(10);
+        $humidity = dht22Sensor::orderBy('time', 'DESC')->pluck('humidity')->limit(10);
+        $heat_index = dht22Sensor::orderBy('time', 'DESC')->pluck('heat_index')->limit(10);
+        return view('dashboard.data_dht22', compact('datas', 'temperature', 'humidity', 'heat_index'));
     }
 
     public function mq2()

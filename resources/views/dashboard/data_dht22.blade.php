@@ -5,6 +5,80 @@
 <link rel="stylesheet" href="{{asset('stisla/dist/assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css')}}">
 @endsection
 @section('js')
+<script src="{{asset('stisla/dist/assets/modules/chart.min.js')}}"></script>
+
+<script>
+    var statistics_chart = document.getElementById("myChartWarehouse").getContext('2d');
+    var temperature = {!! json_encode($temperature) !!};
+    var humidity = {!! json_encode($humidity) !!};
+    var heat_index = {!! json_encode($heat_index) !!};
+    var timeLabels = {!! json_encode($timeLabels) !!};
+    var myChart = new Chart(statistics_chart, {
+        type: 'line',
+        data: {
+            labels: timeLabels,
+            datasets: [
+                {
+                    label: 'Temperature',
+                    data: temperature,
+                    borderWidth: 5,
+                    borderColor: '#6777ef',
+                    backgroundColor: 'transparent',
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#6777ef',
+                    pointRadius: 4
+                },
+                {
+                    label: 'Humidity',
+                    data: humidity,
+                    borderWidth: 5,
+                    borderColor: '#ef6e77', // Warna berbeda untuk garis ini
+                    backgroundColor: 'transparent',
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#ef6e77',
+                    pointRadius: 4
+                },
+                {
+                    label: 'Heat Index',
+                    data: heat_index,
+                    borderWidth: 5,
+                    borderColor: '#ef6e77', // Warna berbeda untuk garis ini
+                    backgroundColor: 'transparent',
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#ef6e77',
+                    pointRadius: 4
+                },
+            ]
+        },
+        options: {
+            legend: {
+                display: true, // Menampilkan legenda
+                labels: {
+                    boxWidth: 20 // Ukuran kotak legenda
+                }
+            },
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        stepSize: 25,
+                        min: 0,
+                        max: 100
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        color: '#fbfbfb',
+                        lineWidth: 2
+                    }
+                }]
+            }
+        }
+    });
+</script>
 <script src="{{asset('stisla/dist/assets/modules/datatables/datatables.min.js')}}"></script>
 <script src="{{asset('stisla/dist/assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
 <script src="{{asset('stisla/dist/assets/modules/datatables/Select-1.2.4/js/dataTables.select.min.js')}}"></script>
@@ -100,6 +174,59 @@
                     </div>
                 </div>
             </form> --}}
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                <h4>Statistics</h4>
+                <div class="card-header-action">
+                    <div class="btn-group">
+                    <a href="#" class="btn" id="weekBtn">Interval 5 detik</a>
+                    {{-- <a href="#" class="btn" id="monthBtn">Month</a> --}}
+                    </div>
+                </div>
+                </div>
+                <div class="card-body">
+                <canvas id="myChartWarehouse" height="182"></canvas>
+                {{-- <canvas id="myChartWarehouse2" height="182" style="display: none;"></canvas> --}}
+                <script>
+                    const weekBtn = document.getElementById("weekBtn");
+                    const monthBtn = document.getElementById("monthBtn");
+                    const myChartWarehouse = document.getElementById("myChartWarehouse");
+                    //const myChartWarehouse2 = document.getElementById("myChartWarehouse2");
+
+                    // Inisialisasi tombol "Week" sebagai aktif
+                    weekBtn.classList.add("active");
+
+                    // Tangani klik pada tombol Week
+                    weekBtn.addEventListener("click", function(event) {
+                        event.preventDefault(); // Mencegah perubahan posisi secara otomatis
+
+                        myChartWarehouse.style.display = "block";
+                        myChartWarehouse2.style.display = "none";
+
+                        // Atur status tombol aktif
+                        weekBtn.classList.add("active");
+                        monthBtn.classList.remove("active");
+                    });
+
+                    // Tangani klik pada tombol Month
+                    monthBtn.addEventListener("click", function(event) {
+                        event.preventDefault(); // Mencegah perubahan posisi secara otomatis
+
+                        myChartWarehouse.style.display = "none";
+                        myChartWarehouse2.style.display = "block";
+
+                        // Atur status tombol aktif
+                        weekBtn.classList.remove("active");
+                        monthBtn.classList.add("active");
+                    });
+                </script>
+                </div>
+            </div>
+            </div>
         </div>
       </div>
     </section>
