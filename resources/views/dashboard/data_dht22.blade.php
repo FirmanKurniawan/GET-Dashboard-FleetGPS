@@ -14,7 +14,6 @@
             method: 'GET',
             dataType: 'json',
             success: function(response) {
-                console.log(myChart1.data.labels)
                 myChart1.data.labels = response.timeLabels;
                 myChart1.data.datasets[0].data = response.temperature;
 
@@ -33,11 +32,11 @@
     var myChart1 = new Chart(statistics_chart, {
         type: 'line',
         data: {
-            // labels: timeLabels,
+            labels: timeLabels,
             datasets: [
                 {
                     label: 'Temperature',
-                    // data: temperature,
+                    data: temperature,
                     borderWidth: 2.5,
                     borderColor: '#6777ef',
                     backgroundColor: '#6777ef',
