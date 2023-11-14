@@ -19,10 +19,10 @@
                 {
                     label: 'Temperature',
                     data: temperature,
-                    borderWidth: 5,
-                    borderColor: '#000000',
-                    backgroundColor: 'transparent',
-                    pointBackgroundColor: '#fff',
+                    borderWidth: 2,
+                    borderColor: '#6777ef',
+                    backgroundColor: '#6777ef',
+                    pointBackgroundColor: '#ffffff',
                     pointBorderColor: '#000000',
                     pointRadius: 4
                 },
