@@ -179,8 +179,8 @@
                     },
                     ticks: {
                         stepSize: 5,
-                        min: 20,
-                        max: 40,
+                        min: 30,
+                        max: 90,
                         beginAtZero: true
                     }
                 }],
@@ -330,8 +330,8 @@
                     label: 'Heat Index',
                     data: heat_index,
                     borderWidth: 2.5,
-                    borderColor: '#ef6e77',
-                    backgroundColor: '#ef6e77',
+                    borderColor: '#3cb371',
+                    backgroundColor: '#3cb371',
                     pointBackgroundColor: '#ffffff',
                     pointBorderColor: '#000000',
                     pointRadius: 4
