@@ -14,7 +14,9 @@
             method: 'GET',
             dataType: 'json',
             success: function(response) {
+                console.log(response)
                 myChart.data.labels = response.timeLabels;
+                console.log(myChart.data.labels)
                 myChart.data.datasets[0].data = response.temperature;
 
                 myChart.update();
