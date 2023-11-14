@@ -33,8 +33,14 @@ class DashboardController extends Controller
 
     public function temperature()
     {
+        $timeLabels = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('time');
         $temperature = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('temperature');
-        return view('dashboard.data_temperature', compact('temperature'));
+
+        $response = [
+            'timeLabels' => $timeLabels,
+            'temperature' => $temperature,
+        ];
+        return response()->json($response);
     }
 
     public function humidity()
