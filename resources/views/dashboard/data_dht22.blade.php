@@ -98,7 +98,7 @@
                     },
                     ticks: {
                         stepSize: 10,
-                        min: 30,
+                        min: 20,
                         max: 70
                     }
                 }],
