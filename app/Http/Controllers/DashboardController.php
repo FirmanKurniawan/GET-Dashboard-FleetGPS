@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Data;
-use App\Models\dht22Sensor;
-use App\Models\mq2Sensor;
-use App\Models\mq135Sensor;
+use App\Models\GPS;
+use App\Models\OBD2;
 
 class DashboardController extends Controller
 {
@@ -15,73 +13,67 @@ class DashboardController extends Controller
         return view('dashboard.index');
     }
 
-    public function data()
+    public function gps()
     {
-        $datas = Data::orderBy('created_at', 'DESC')->get();
-        return view('dashboard.data', compact('datas'));
+        return view('dashboard.gps');
     }
 
-    public function dht22()
+    public function obd2()
     {
-        $datas = dht22Sensor::orderBy('time', 'DESC')->get();
-        $temperature = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('temperature');
-        $humidity = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('humidity');
-        $heat_index = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('heat_index');
-        $timeLabels = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('time');
-        return view('dashboard.data_dht22', compact('datas', 'temperature', 'humidity', 'heat_index', 'timeLabels'));
+        $speed = OBD2::orderBy('updated_at', 'DESC')->take(5)->pluck('speed');
+        $distance = OBD2::orderBy('updated_at', 'DESC')->take(5)->pluck('distance');
+        $timeLabels = OBD2::orderBy('updated_at', 'DESC')->take(5)->pluck('updated_at');
+        return view('dashboard.obd2', compact('speed', 'timeLabels', 'distance'));
     }
 
-    public function temperature()
+    public function getLocation()
     {
-        $timeLabels = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('time');
-        $temperature = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('temperature');
+        $positions = GPS::select('id', 'longitude', 'latitude', 'device', 'updated_at')->get();
+        // $positions = [
+        //     ['id' => 1, 'lat' => -1.1742548, 'lon' => 116.6769315],
+        //     ['id' => 2, 'lat' => -1.2345678, 'lon' => 117.1234567],
+        //     ['id' => 3, 'lat' => -6.1905982, 'lon' => 106.7622865,17],
+        // ];
+
+        return response()->json($positions);
+    }
+
+    public function getObd2()
+    {
+        $obd2 = OBD2::select('id', 'speedometer', 'fuel', 'accu', 'speed', 'temperature', 'distance', 'updated_at')->latest()->get();
+        // $obd2 = [
+        //     [
+        //         'id' => 1,
+        //         'speedometer' => -1.1742548,
+        //         'fuel' => 116.6769315,
+        //         'accu' => 116.6769315,
+        //         'speed' => 116.6769315,
+        //         'temperature' => 116.6769315,
+        //         'distance' => 116.6769315,
+        //         'updated_at' => 116.6769315
+        //     ],
+        // ];
+
+        return response()->json($obd2);
+    }
+
+    public function getObd2Latest()
+    {
+        $timeLabels = OBD2::orderBy('updated_at', 'ASC')->take(5)->pluck('updated_at');
+        $speed = OBD2::orderBy('updated_at', 'ASC')->take(5)->pluck('speed');
+        $distance = OBD2::orderBy('updated_at', 'ASC')->take(5)->pluck('distance');
 
         $response = [
             'timeLabels' => $timeLabels,
-            'temperature' => $temperature,
+            'speed' => $speed,
+            'distance' => $distance,
         ];
         return response()->json($response);
     }
 
-    public function humidity()
+    public function getDistance()
     {
-        $timeLabels = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('time');
-        $humidity = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('humidity');
-
-        $response = [
-            'timeLabels' => $timeLabels,
-            'humidity' => $humidity,
-        ];
-        return response()->json($response);
-    }
-
-    public function heat_index()
-    {
-        $timeLabels = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('time');
-        $heat_index = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('heat_index');
-
-        $response = [
-            'timeLabels' => $timeLabels,
-            'heat_index' => $heat_index,
-        ];
-        return response()->json($response);
-    }
-
-    public function time()
-    {
-        $timeLabels = dht22Sensor::orderBy('time', 'DESC')->take(5)->pluck('time');
-        return view('dashboard.data_time', compact('timeLabels'));
-    }
-
-    public function mq2()
-    {
-        $datas = mq2Sensor::orderBy('time', 'DESC')->get();
-        return view('dashboard.data_mq2', compact('datas'));
-    }
-
-    public function mq135()
-    {
-        $datas = mq135Sensor::orderBy('time', 'DESC')->get();
-        return view('dashboard.data_mq135', compact('datas'));
+        $distance = OBD2::orderBy('updated_at', 'ASC')->take(5)->pluck('distance');
+        return response()->json($distance);
     }
 }

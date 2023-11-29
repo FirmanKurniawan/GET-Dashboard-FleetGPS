@@ -232,7 +232,7 @@
           </li>
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="{{asset('stisla/dist/assets/img/avatar/avatar-1.png')}}" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, {{session()->get('name')}}</div></a>
+            <div class="d-sm-none d-lg-inline-block">Hi, Human</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <div class="dropdown-title">Logged in 5 min ago</div>
               <a href="features-profile.html" class="dropdown-item has-icon">
@@ -261,10 +261,11 @@
             <a href="index.html">St</a>
           </div>
           <ul class="sidebar-menu">
-            <li><a class="nav-link" href="/dashboard"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+            <li><a class="nav-link" href="/"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
             <li class="menu-header">Magnet</li>
             {{-- <li><a class="nav-link" href="/data"><i class="fas fa-toolbox"></i> <span>Data</span></a></li> --}}
-            <li><a class="nav-link" href="/data-dht22"><i class="fas fa-toolbox"></i> <span>Data Sensor</span></a></li>
+            <li><a class="nav-link" href="/gps"><i class="fas fa-location-arrow"></i> <span>GPS</span></a></li>
+            <li><a class="nav-link" href="/obd2"><i class="fas fa-cogs"></i> <span>OBD2</span></a></li>
             {{-- <li><a class="nav-link" href="/data-mq2"><i class="fas fa-toolbox"></i> <span>Data Sensor MQ 2</span></a></li>
             <li><a class="nav-link" href="/data-mq135"><i class="fas fa-toolbox"></i> <span>Data Sensor MQ 135</span></a></li> --}}
           </ul>

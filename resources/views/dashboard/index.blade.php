@@ -15,11 +15,11 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">
                 <div class="card-icon bg-primary">
-                <i class="far fa-user"></i>
+                <i class="fas fa-car-side"></i>
                 </div>
                 <div class="card-wrap">
                 <div class="card-header">
-                    <h4>Items</h4>
+                    <h4>Vehicles</h4>
                 </div>
                 <div class="card-body">
                     1
@@ -30,14 +30,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">
                 <div class="card-icon bg-danger">
-                <i class="far fa-newspaper"></i>
+                <i class="fas fa-network-wired"></i>
                 </div>
                 <div class="card-wrap">
                 <div class="card-header">
-                    <h4>Vendors</h4>
+                    <h4>Sensors</h4>
                 </div>
                 <div class="card-body">
-                    1
+                    7
                 </div>
                 </div>
             </div>
@@ -45,14 +45,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">
                 <div class="card-icon bg-warning">
-                <i class="far fa-file"></i>
+                <i class="fas fa-bell"></i>
                 </div>
                 <div class="card-wrap">
                 <div class="card-header">
-                    <h4>Category Item</h4>
+                    <h4>Notifications</h4>
                 </div>
                 <div class="card-body">
-                    1
+                    0
                 </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">
                 <div class="card-icon bg-success">
-                <i class="fas fa-circle"></i>
+                <i class="fas fa-users"></i>
                 </div>
                 <div class="card-wrap">
                 <div class="card-header">

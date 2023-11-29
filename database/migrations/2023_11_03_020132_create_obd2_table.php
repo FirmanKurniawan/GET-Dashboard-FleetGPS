@@ -11,9 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data', function (Blueprint $table) {
+        Schema::create('obd2', function (Blueprint $table) {
             $table->id();
-            $table->text('data');
+            $table->float('speedometer');
+            $table->float('fuel');
+            $table->float('accu');
+            $table->float('speed');
+            $table->float('distance');
+            $table->float('temperature');
             $table->timestamps();
         });
     }
@@ -23,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data');
+        Schema::dropIfExists('obd2');
     }
 };
