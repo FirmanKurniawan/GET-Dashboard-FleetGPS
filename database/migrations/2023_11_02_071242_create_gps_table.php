@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('longitude');
             $table->string('latitude');
             $table->string('altitude');
-            $table->string('device');
             $table->timestamps();
         });
     }
