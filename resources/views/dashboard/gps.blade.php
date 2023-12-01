@@ -250,7 +250,7 @@
                 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
                 var customIcon = L.icon({
-                    iconUrl: 'http://localhost:8000/icontruck.png',
+                    iconUrl: 'http://localhost:8000/icon-hp.png',
                     iconSize: [32, 32],
                     iconAnchor: [16, 32],
                     popupAnchor: [0, -32],
@@ -272,7 +272,7 @@
                             var formattedDate = createdAt.toLocaleString('en-US', { timeZone: 'UTC' });
 
                             var marker = L.marker([truck.latitude, truck.longitude], { icon: customIcon }).addTo(map)
-                                .bindPopup('Truck ' + truck.id + '<br>Latitude: ' + truck.latitude + '<br>Longitude: ' + truck.longitude + '<br>Created At: ' + formattedDate);
+                                .bindPopup('Device ' + truck.id + '<br>Latitude: ' + truck.latitude + '<br>Longitude: ' + truck.longitude + '<br>Created At: ' + formattedDate);
                         });
                     });
                 }
