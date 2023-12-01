@@ -272,7 +272,7 @@
                             var formattedDate = updatedAt.toLocaleString('en-US', { timeZone: 'UTC' });
 
                             var marker = L.marker([truck.latitude, truck.longitude], { icon: customIcon }).addTo(map)
-                                .bindPopup('Truck ' + truck.id + '<br>Latitude: ' + truck.latitude + '<br>Longitude: ' + truck.longitude + '<br>Device: ' + truck.device + '<br>Updated At: ' + formattedDate);
+                                .bindPopup('Truck ' + truck.id + '<br>Latitude: ' + truck.latitude + '<br>Longitude: ' + truck.longitude + '<br>Updated At: ' + formattedDate);
                         });
                     });
                 }

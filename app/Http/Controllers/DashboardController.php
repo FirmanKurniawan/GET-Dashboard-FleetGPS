@@ -28,7 +28,7 @@ class DashboardController extends Controller
 
     public function getLocation()
     {
-        $positions = GPS::select('id', 'longitude', 'latitude', 'device', 'updated_at')->get();
+        $positions = GPS::select('id', 'longitude', 'latitude', 'updated_at')->get();
         // $positions = [
         //     ['id' => 1, 'lat' => -1.1742548, 'lon' => 116.6769315],
         //     ['id' => 2, 'lat' => -1.2345678, 'lon' => 117.1234567],
