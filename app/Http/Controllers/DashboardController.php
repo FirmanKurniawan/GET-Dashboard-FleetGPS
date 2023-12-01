@@ -28,7 +28,7 @@ class DashboardController extends Controller
 
     public function getLocation()
     {
-        $positions = GPS::select('id', 'longitude', 'latitude', 'updated_at')->get();
+        $positions = GPS::select('id', 'longitude', 'latitude', 'created_at')->get();
         // $positions = [
         //     ['id' => 1, 'lat' => -1.1742548, 'lon' => 116.6769315],
         //     ['id' => 2, 'lat' => -1.2345678, 'lon' => 117.1234567],
@@ -40,7 +40,7 @@ class DashboardController extends Controller
 
     public function getObd2()
     {
-        $obd2 = OBD2::select('id', 'speedometer', 'fuel', 'accu', 'speed', 'temperature', 'distance', 'updated_at')->latest()->get();
+        $obd2 = OBD2::select('id', 'speedometer', 'fuel', 'accu', 'speed', 'temperature', 'distance', 'created_at')->latest()->get();
         // $obd2 = [
         //     [
         //         'id' => 1,
