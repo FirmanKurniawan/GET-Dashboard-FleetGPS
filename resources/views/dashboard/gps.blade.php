@@ -266,13 +266,13 @@
 
                         data.forEach(function (truck) {
                             // Parsing tanggal dan waktu dari format yang diberikan
-                            var updatedAt = new Date(truck.updated_at);
+                            var createdAt = new Date(truck.created_at);
 
                             // Menggunakan fungsi toLocaleString untuk memformat tanggal dan waktu
-                            var formattedDate = updatedAt.toLocaleString('en-US', { timeZone: 'UTC' });
+                            var formattedDate = createdAt.toLocaleString('en-US', { timeZone: 'UTC' });
 
                             var marker = L.marker([truck.latitude, truck.longitude], { icon: customIcon }).addTo(map)
-                                .bindPopup('Truck ' + truck.id + '<br>Latitude: ' + truck.latitude + '<br>Longitude: ' + truck.longitude + '<br>Updated At: ' + formattedDate);
+                                .bindPopup('Truck ' + truck.id + '<br>Latitude: ' + truck.latitude + '<br>Longitude: ' + truck.longitude + '<br>Created At: ' + formattedDate);
                         });
                     });
                 }
