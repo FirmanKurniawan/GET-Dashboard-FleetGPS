@@ -15,7 +15,7 @@ class DashboardController extends Controller
 
     public function gps()
     {
-        $gps = GPS::orderBy('updated_at', 'DESC')->take(5)->get();
+        $gps = GPS::orderBy('created_at', 'DESC')->take(5)->get();
         return view('dashboard.gps', compact('gps'));
     }
 
