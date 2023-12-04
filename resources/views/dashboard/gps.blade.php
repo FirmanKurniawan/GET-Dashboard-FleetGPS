@@ -249,12 +249,9 @@
                       <a href="/script" class="btn btn-primary"><i class="fas fa-plus"></i> Get Data GPS</a>
                       &nbsp;
                       <select class="form-control col-2">
-                          <option>GPS 1</option>
-                          <option>GPS 2</option>
-                          <option>GPS 3</option>
-                          <option>GPS 4</option>
-                          <option>GPS 5</option>
-                          <option>GPS 6</option>
+                        @foreach ($gps as $gps_data)
+                          <option>{{$gps_data->id}}</option>
+                        @endforeach
                       </select>
                       {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-item"><i class="fas fa-plus"></i> Add Item</button> --}}
                     </div>
