@@ -305,45 +305,23 @@
             <div class="col-3">
                 <div class="card">
                 <div class="card-header">
-                    <h4>Recent Activities</h4>
+                    <h4>List GPS</h4>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled list-unstyled-border">
-                    <li class="media">
-                        <div class="media-body">
-                        <div class="float-right text-primary">Now</div>
-                        <div class="media-title">Farhan A Mujib</div>
-                        <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <div class="media-body">
-                        <div class="float-right">12m</div>
-                        <div class="media-title">Ujang Maman</div>
-                        <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <div class="media-body">
-                        <div class="float-right">17m</div>
-                        <div class="media-title">Rizal Fakhri</div>
-                        <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <div class="media-body">
-                        <div class="float-right">21m</div>
-                        <div class="media-title">Alfa Zulkarnain</div>
-                        <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
-                        </div>
-                    </li>
-                    <li class="media">
-                        <div class="media-body">
-                        <div class="float-right">21m</div>
-                        <div class="media-title">Alfa Zulkarnain</div>
-                        <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
-                        </div>
-                    </li>
+                    @foreach ($gps as $gps_data)
+                        <li class="media">
+                            <div class="media-body">
+                            <span class="text-small text-muted">
+                                ID: {{$gps_data->id}} <br>
+                                Latitude: {{$gps_data->latitude}} <br>
+                                Longitude: {{$gps_data->longitude}} <br>
+                                Altitude: {{$gps_data->altitude}} <br>
+                                Created At: {{$gps_data->created_at}}
+                            </span>
+                            </div>
+                        </li>
+                    @endforeach
                     </ul>
                 </div>
                 </div>
