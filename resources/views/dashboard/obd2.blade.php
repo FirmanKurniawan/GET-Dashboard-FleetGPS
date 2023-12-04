@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="col-6">
+            {{-- <div class="col-6">
                 <div class="card">
                     <div id='myDiv5'></div>
                 </div>
@@ -60,7 +60,7 @@
                 <div class="card">
                     <div id='myDiv6'></div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="col-12">
                 <div class="card">
