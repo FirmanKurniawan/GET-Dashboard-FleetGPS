@@ -15,7 +15,7 @@
 <div class="main-content">
     <section class="section">
       <div class="section-header">
-        <h1>OBD 2</h1>
+        <h1><img src="/prismax.jpeg" style="height: 50%; width: 50%"></h1>
         <div class="section-header-breadcrumb">
           <div class="breadcrumb-item active"><a href="/">Dashboard</a></div>
           <div class="breadcrumb-item">OBD 2</div>
@@ -31,7 +31,7 @@
 
         <div class="row">
             <div class="col-3">
-                <div class="card" style="background-color: pink;">
+                <div class="card">
                     <div id='myDiv'></div>
                 </div>
             </div>
