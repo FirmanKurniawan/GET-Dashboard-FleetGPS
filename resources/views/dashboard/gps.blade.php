@@ -230,7 +230,7 @@
 <div class="main-content">
     <section class="section">
       <div class="section-header">
-        <h1>Sensor</h1>
+        <h1>GPS</h1>
         <div class="section-header-breadcrumb">
           <div class="breadcrumb-item active"><a href="/">Dashboard</a></div>
           <div class="breadcrumb-item">GPS</div>
@@ -239,9 +239,29 @@
 
       <div class="section-body">
         <h2 class="section-title">Data GPS</h2>
+
         <div class="row">
-          <div class="col-12">
-            <div id="map" style="width: 100%; height: 580px"></div>
+          <div class="col-9">
+            <div class="row">
+                <div class="col-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <a href="/script" class="btn btn-primary"><i class="fas fa-plus"></i> Get Data GPS</a>
+                      &nbsp;
+                      <select class="form-control col-2">
+                          <option>GPS 1</option>
+                          <option>GPS 2</option>
+                          <option>GPS 3</option>
+                          <option>GPS 4</option>
+                          <option>GPS 5</option>
+                          <option>GPS 6</option>
+                      </select>
+                      {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-item"><i class="fas fa-plus"></i> Add Item</button> --}}
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div id="map" style="width: 100%; height: 600px"></div>
             <script src="http://localhost:8000/leaflet.js"></script>
             <script src="http://localhost:8000/leaflet-fullscreen.js"></script>
             <script>
@@ -281,6 +301,54 @@
                 map.addControl(new L.Control.Fullscreen());
             </script>
           </div>
+
+            <div class="col-3">
+                <div class="card">
+                <div class="card-header">
+                    <h4>Recent Activities</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled list-unstyled-border">
+                    <li class="media">
+                        <div class="media-body">
+                        <div class="float-right text-primary">Now</div>
+                        <div class="media-title">Farhan A Mujib</div>
+                        <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
+                        </div>
+                    </li>
+                    <li class="media">
+                        <div class="media-body">
+                        <div class="float-right">12m</div>
+                        <div class="media-title">Ujang Maman</div>
+                        <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
+                        </div>
+                    </li>
+                    <li class="media">
+                        <div class="media-body">
+                        <div class="float-right">17m</div>
+                        <div class="media-title">Rizal Fakhri</div>
+                        <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
+                        </div>
+                    </li>
+                    <li class="media">
+                        <div class="media-body">
+                        <div class="float-right">21m</div>
+                        <div class="media-title">Alfa Zulkarnain</div>
+                        <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
+                        </div>
+                    </li>
+                    <li class="media">
+                        <div class="media-body">
+                        <div class="float-right">21m</div>
+                        <div class="media-title">Alfa Zulkarnain</div>
+                        <span class="text-small text-muted">Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.</span>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
         </div>
       </div>
     </section>
