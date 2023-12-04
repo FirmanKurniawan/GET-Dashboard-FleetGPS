@@ -242,19 +242,15 @@
 
         <div class="row">
           <div class="col-9">
-            {{-- <div class="row">
+            <div class="row">
                 <div class="col-12">
                   <div class="card">
                     <div class="card-header">
-                      <a href="/script" class="btn btn-primary"><i class="fas fa-plus"></i> Get Data GPS</a>
-                      &nbsp;
-                      <select class="form-control col-2">
-                            <option>{{$gps_data->id}}</option>
-                      </select>
+                      <a href="/script" class="btn btn-primary"><i class="fas fa-plus"></i> Get Location</a>
                     </div>
                   </div>
                 </div>
-            </div> --}}
+            </div>
             <div id="map" style="width: 100%; height: 550px"></div>
             <script src="http://localhost:8000/leaflet.js"></script>
             <script src="http://localhost:8000/leaflet-fullscreen.js"></script>
