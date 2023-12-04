@@ -242,15 +242,15 @@
 
         <div class="row">
           <div class="col-9">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-12">
                   <div class="card">
                     <div class="card-header">
-                      <a href="/script" class="btn btn-primary"><i class="fas fa-plus"></i> Get Location</a>
+                      <a href="/script" class="btn btn-primary"><i class="fas fa-plus"></i> Get Data GPS</a>
                     </div>
                   </div>
                 </div>
-            </div>
+            </div> --}}
             <div id="map" style="width: 100%; height: 550px"></div>
             <script src="http://localhost:8000/leaflet.js"></script>
             <script src="http://localhost:8000/leaflet-fullscreen.js"></script>
@@ -310,6 +310,7 @@
                                 Longitude: {{$gps2->longitude}} <br>
                                 Altitude: {{$gps2->altitude}} <br>
                                 Created At: {{$gps2->created_at}}
+                                <a href="/script" class="btn btn-primary">Get Data GPS</a>
                             </span>
                             </div>
                         </li>
@@ -328,6 +329,7 @@
                                 Longitude: {{$gps_data->longitude}} <br>
                                 Altitude: {{$gps_data->altitude}} <br>
                                 Created At: {{$gps_data->created_at}}
+                                <a href="/script" class="btn btn-primary">Get Data GPS</a>
                             </span>
                             </div>
                         </li>
