@@ -34,7 +34,7 @@
   <div id="token-holder" data-token="{{ session()->get('token') }}"></div>
   <div id="app">
     <div class="main-wrapper main-wrapper-1">
-      <div class="navbar-bg"></div>
+      <div class="navbar-bg" style="background-color: #FE0007"></div>
       <nav class="navbar navbar-expand-lg main-navbar">
         <form class="form-inline mr-auto">
           <ul class="navbar-nav mr-3">
@@ -265,7 +265,7 @@
             <li class="menu-header">Magnet</li>
             {{-- <li><a class="nav-link" href="/data"><i class="fas fa-toolbox"></i> <span>Data</span></a></li> --}}
             <li><a class="nav-link" href="/gps"><i class="fas fa-location-arrow"></i> <span>GPS</span></a></li>
-            <li><a class="nav-link" href="/obd2"><i class="fas fa-cogs"></i> <span>OBD2</span></a></li>
+            {{-- <li><a class="nav-link" href="/obd2"><i class="fas fa-cogs"></i> <span>OBD2</span></a></li> --}}
             {{-- <li><a class="nav-link" href="/data-mq2"><i class="fas fa-toolbox"></i> <span>Data Sensor MQ 2</span></a></li>
             <li><a class="nav-link" href="/data-mq135"><i class="fas fa-toolbox"></i> <span>Data Sensor MQ 135</span></a></li> --}}
           </ul>

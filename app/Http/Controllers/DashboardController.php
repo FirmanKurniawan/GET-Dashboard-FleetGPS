@@ -10,13 +10,15 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard.index');
+        $count = GPS::distinct()->count();
+        return view('dashboard.index', compact('count'));
     }
 
     public function gps()
     {
-        $gps = GPS::orderBy('created_at', 'DESC')->take(5)->distinct()->get();
-        return view('dashboard.gps', compact('gps'));
+        $gps = GPS::orderBy('created_at', 'DESC')->take(4)->distinct()->get();
+        $gps2 = GPS::orderBy('created_at', 'DESC')->first();
+        return view('dashboard.gps', compact('gps', 'gps2'));
     }
 
     public function obd2()
@@ -29,7 +31,7 @@ class DashboardController extends Controller
 
     public function getLocation()
     {
-        $positions = GPS::select('id', 'longitude', 'latitude', 'created_at')->get();
+        $positions = GPS::select('id', 'longitude', 'latitude', 'altitude', 'created_at')->get();
         // $positions = [
         //     ['id' => 1, 'lat' => -1.1742548, 'lon' => 116.6769315],
         //     ['id' => 2, 'lat' => -1.2345678, 'lon' => 117.1234567],
@@ -56,6 +58,15 @@ class DashboardController extends Controller
         // ];
 
         return response()->json($obd2);
+    }
+
+    public function obd2ID($id)
+    {
+        $id = $id;
+        $speed = OBD2::orderBy('updated_at', 'DESC')->take(5)->pluck('speed');
+        $distance = OBD2::orderBy('updated_at', 'DESC')->take(5)->pluck('distance');
+        $timeLabels = OBD2::orderBy('updated_at', 'DESC')->take(5)->pluck('updated_at');
+        return view('dashboard.obd2', compact('speed', 'timeLabels', 'distance', 'id'));
     }
 
     public function getObd2Latest()

@@ -22,7 +22,7 @@
                     <h4>Vehicles</h4>
                 </div>
                 <div class="card-body">
-                    1
+                    {{$count}}
                 </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     <h4>Sensors</h4>
                 </div>
                 <div class="card-body">
-                    7
+                    {{$count * 4}}
                 </div>
                 </div>
             </div>

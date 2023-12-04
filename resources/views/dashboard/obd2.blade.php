@@ -23,7 +23,11 @@
       </div>
 
       <div class="section-body">
+        @if($id)
+        <h2 class="section-title">Data OBD 2 - ID: {{$id}}</h2>
+        @else
         <h2 class="section-title">Data OBD 2</h2>
+        @endif
 
         <div class="row">
             <div class="col-3">
@@ -93,10 +97,10 @@
                     {
                         domain: { x: [0, 1], y: [0, 1] },
                         value: value,
-                        title: { text: "Speedometer" },
+                        title: { text: "Speedometer (km/h)" },
                         type: "indicator",
                         mode: "gauge+number",
-                        gauge: { axis: { range: [null, 200] } }
+                        gauge: { axis: { range: [null, 100] } }
                     }
                 ];
 
@@ -108,7 +112,7 @@
                     {
                         domain: { x: [0, 1], y: [0, 1] },
                         value: value,
-                        title: { text: "Fuel Level" },
+                        title: { text: "Fuel Level (L)" },
                         type: "indicator",
                         mode: "gauge+number",
                         gauge: { axis: { range: [null, 100] } }
@@ -123,7 +127,7 @@
                     {
                         domain: { x: [0, 1], y: [0, 1] },
                         value: value,
-                        title: { text: "Accu Level" },
+                        title: { text: "Accu Level (V)" },
                         type: "indicator",
                         mode: "gauge+number",
                         gauge: { axis: { range: [null, 100] } }
@@ -138,7 +142,7 @@
                     {
                         domain: { x: [0, 1], y: [0, 1] },
                         value: value,
-                        title: { text: "Temperature Level" },
+                        title: { text: "Temperature Level (C)" },
                         type: "indicator",
                         mode: "gauge+number",
                         gauge: { axis: { range: [null, 100] } }

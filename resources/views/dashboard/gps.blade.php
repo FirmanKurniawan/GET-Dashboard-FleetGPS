@@ -230,7 +230,7 @@
 <div class="main-content">
     <section class="section">
       <div class="section-header">
-        <h1>GPS</h1>
+        <h1><img src="prismax.jpeg" style="height: 50%; width: 50%"></h1>
         <div class="section-header-breadcrumb">
           <div class="breadcrumb-item active"><a href="/">Dashboard</a></div>
           <div class="breadcrumb-item">GPS</div>
@@ -238,27 +238,24 @@
       </div>
 
       <div class="section-body">
-        <h2 class="section-title">Data GPS</h2>
+        <h2 class="section-title">Location</h2>
 
         <div class="row">
           <div class="col-9">
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-12">
                   <div class="card">
                     <div class="card-header">
                       <a href="/script" class="btn btn-primary"><i class="fas fa-plus"></i> Get Data GPS</a>
                       &nbsp;
                       <select class="form-control col-2">
-                        @foreach ($gps as $gps_data)
-                          <option>{{$gps_data->id}}</option>
-                        @endforeach
+                            <option>{{$gps_data->id}}</option>
                       </select>
-                      {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add-item"><i class="fas fa-plus"></i> Add Item</button> --}}
                     </div>
                   </div>
                 </div>
-            </div>
-            <div id="map" style="width: 100%; height: 600px"></div>
+            </div> --}}
+            <div id="map" style="width: 100%; height: 550px"></div>
             <script src="http://localhost:8000/leaflet.js"></script>
             <script src="http://localhost:8000/leaflet-fullscreen.js"></script>
             <script>
@@ -267,7 +264,7 @@
                 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
                 var customIcon = L.icon({
-                    iconUrl: 'http://localhost:8000/mobil-merah.png',
+                    iconUrl: 'http://localhost:8000/truck-merah.png',
                     iconSize: [32, 32],
                     iconAnchor: [16, 32],
                     popupAnchor: [0, -32],
@@ -289,7 +286,7 @@
                             var formattedDate = createdAt.toLocaleString('en-US', { timeZone: 'UTC' });
 
                             var marker = L.marker([truck.latitude, truck.longitude], { icon: customIcon }).addTo(map)
-                                .bindPopup('Device ' + truck.id + '<br>Latitude: ' + truck.latitude + '<br>Longitude: ' + truck.longitude + '<br>Created At: ' + formattedDate);
+                                .bindPopup('ID: ' + truck.id + '<br>Latitude: ' + truck.latitude + '<br>Longitude: ' + truck.longitude + '<br>Altitude: ' + truck.altitude + '<br>Created At: ' + formattedDate);
                         });
                     });
                 }
@@ -302,15 +299,35 @@
             <div class="col-3">
                 <div class="card">
                 <div class="card-header">
-                    <h4>List GPS</h4>
+                    <h4>List User</h4>
                 </div>
                 <div class="card-body">
                     <ul class="list-unstyled list-unstyled-border">
-                    @foreach ($gps as $gps_data)
                         <li class="media">
                             <div class="media-body">
+                            <div class="float-right text-primary">
+                                <a href="/obd2/{{$gps2->id}}">Detail</a>
+                            </div>
                             <span class="text-small text-muted">
-                                ID: {{$gps_data->id}} <br>
+                                ID: {{$gps2->id}} <br>
+                                Latitude: {{$gps2->latitude}} <br>
+                                Longitude: {{$gps2->longitude}} <br>
+                                Altitude: {{$gps2->altitude}} <br>
+                                Created At: {{$gps2->created_at}}
+                            </span>
+                            </div>
+                        </li>
+                    @foreach ($gps as $gps_data)
+                        @php
+                            $random = rand(900000, 999999);
+                        @endphp
+                        <li class="media">
+                            <div class="media-body">
+                            <div class="float-right text-primary">
+                                <a href="">Detail</a>
+                            </div>
+                            <span class="text-small text-muted">
+                                ID: {{$random}} <br>
                                 Latitude: {{$gps_data->latitude}} <br>
                                 Longitude: {{$gps_data->longitude}} <br>
                                 Altitude: {{$gps_data->altitude}} <br>
